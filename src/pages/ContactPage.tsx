@@ -3,10 +3,11 @@ import Footer from "../components/Footer";
 import { FaPhone } from "react-icons/fa6";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [isEmailSent, setIsEmailSent] = useState<boolean>(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,6 +21,11 @@ const ContactPage = () => {
       .then(
         () => {
           console.log("Email sent successfully!");
+          setIsEmailSent(true);
+          setTimeout(() => {
+            setIsEmailSent(false);
+            formRef.current?.reset(); // Reset form fields
+          }, 3000); // Clear success message after 3 seconds
         },
         (error) => {
           console.error("Failed to send email:", error);
@@ -164,6 +170,11 @@ const ContactPage = () => {
           </p>
         </div>
       </div>
+      {isEmailSent && (
+        <div className="bg-green-100 fixed bottom-10 left-10 text-green-700 rounded-md py-3 px-8">
+          Email sent successfully!
+        </div>
+      )}
       <Footer />
     </>
   );

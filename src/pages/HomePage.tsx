@@ -4,39 +4,76 @@ import HeroSlider from "../components/HeroSlider";
 import VehicleSlider from "../components/VehicleSlider";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/all";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
+  const scrollRef = useRef(null);
+
   useGSAP(() => {
-    gsap.from('.',{})
-  },[])
+    gsap.from(".home-content", {
+      opacity: 0,
+      duration: 0.8,
+      y: 150,
+      stagger: 0.08,
+    });
+  }, []);
+
+  useGSAP(() => {
+    gsap.from(".home-subtitle", {
+      x: 150,
+      duration: 0.8,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".home-secondary",
+        start: "bottom bottom",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    });
+  }, [ScrollTrigger]);
+
   return (
     <>
       <main className="relative z-[10]">
-        <div className="bg-gradient-to-t from-rose-50 to-yellow-50">
+        <div className="bg-gradient-to-t from-blue-50 to-rose-50">
           <div className="min-h-[80vh] container flex text-center flex-col items-center justify-center gap-10">
-            <h1 className="text-3xl lg:text-5xl font-semibold ">
+            <h1 className="text-3xl home-content lg:text-5xl font-semibold ">
               Welcome to Balaji E-Rickshaw - Your Trusted Companion for
               Eco-Friendly Travel Solutions!
             </h1>
-            <p className="text-lg max-w-[65rem]">
+            <p className="text-lg home-content max-w-[65rem]">
               Our range of E-Rickshaws is designed to meet the diverse needs of
               modern-day commuters, whether you're navigating through busy city
               streets or exploring suburban landscapes. With cutting-edge
               technology and superior craftsmanship, each of our vehicles
               promises a smooth, comfortable, and emission-free ride.
             </p>
-            <div className="flex items-center gap-6">
-              <Link to="/vehicle/saarthi-star" className="py-3 px-6 bg-rose-500 hover:bg-rose-700 transition rounded-md text-white">
+            <div className="flex home-content items-center gap-6">
+              <Link
+                to="/vehicle/saarthi-star"
+                className="py-3 px-6 bg-rose-500 hover:bg-rose-700 transition rounded-md text-white"
+              >
                 Explore More
               </Link>
-              <Link to="/company-profile/about-us" className="py-3 px-6 hover:bg-gray-200 transition rounded-md ">About Us</Link>
+              <Link
+                to="/company-profile/about-us"
+                className="py-3 px-6 hover:bg-gray-200 transition rounded-md "
+              >
+                About Us
+              </Link>
             </div>
           </div>
         </div>
         <div className="h-[80vh]">
           <HeroSlider />
         </div>
-        <div className="flex items-center justify-center bg-white min-h-[100vh] w-full relative">
+        <div
+          className="flex home-secondary items-center justify-center bg-white min-h-[100vh] w-full relative"
+          ref={scrollRef}
+        >
           <div className="container flex flex-col gap-10">
             <h2 className="home-subtitle relative text-center text-2xl lg:text-3xl my-10 font-semibold">
               India's Leading E-Rickshaw Manufacturer.

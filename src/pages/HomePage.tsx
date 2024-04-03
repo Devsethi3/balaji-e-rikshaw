@@ -4,10 +4,10 @@ import HeroSlider from "../components/HeroSlider";
 import VehicleSlider from "../components/VehicleSlider";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const scrollRef = useRef(null);
@@ -39,12 +39,12 @@ const HomePage = () => {
     <>
       <main className="relative z-[10]">
         <div className="bg-gradient-to-t from-blue-50 to-rose-50">
-          <div className="min-h-[80vh] container flex text-center flex-col items-center justify-center gap-10">
-            <h1 className="text-3xl home-content lg:text-5xl font-semibold ">
+          <div className="min-h-[80vh] py-10 container flex text-center flex-col items-center justify-center gap-10">
+            <h1 className="text-3xl leading-tight home-content lg:text-5xl font-semibold ">
               Welcome to Balaji E-Rickshaw - Your Trusted Companion for
               Eco-Friendly Travel Solutions!
             </h1>
-            <p className="text-lg home-content max-w-[65rem]">
+            <p className="lg:text-lg text-sm home-content max-w-[65rem]">
               Our range of E-Rickshaws is designed to meet the diverse needs of
               modern-day commuters, whether you're navigating through busy city
               streets or exploring suburban landscapes. With cutting-edge

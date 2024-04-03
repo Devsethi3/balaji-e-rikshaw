@@ -57,8 +57,8 @@ const VehiclePage = () => {
     <div>
       {data && (
         <div>
-          <div className="flex items-center flex-col justify-center min-h-[80vh]">
-            <h2 className="text-3xl text-center uppercase mb-12 tracking-tighter">
+          <div className="flex items-center flex-col justify-center">
+            <h2 className="text-3xl text-center my-10 uppercase tracking-tighter">
               {data.title}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">

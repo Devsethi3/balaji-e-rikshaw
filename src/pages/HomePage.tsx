@@ -21,7 +21,7 @@ const HomePage = () => {
               promises a smooth, comfortable, and emission-free ride.
             </p>
             <div className="flex items-center gap-6">
-              <Link to="/" className="py-3 px-6 bg-rose-500 hover:bg-rose-700 transition rounded-md text-white">
+              <Link to="/vehicle/saarthi-star" className="py-3 px-6 bg-rose-500 hover:bg-rose-700 transition rounded-md text-white">
                 Explore More
               </Link>
               <Link to="/company-profile/about-us" className="py-3 px-6 hover:bg-gray-200 transition rounded-md ">About Us</Link>

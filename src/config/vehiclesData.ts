@@ -126,7 +126,11 @@ export const vehicleData = [
       "350 kg",
       "30 Amp",
     ],
-    showCaseImg: ["4.jpg", "saarthi_e-auto_2.jpg"],
+    showCaseImg: [
+      "4.jpg",
+      "saarthi_shavak_e_auto_2.jpg",
+      "saarthi_shavak_e_auto_3.jpg",
+    ],
   },
   {
     title: "Saarthi Shevak Cargo L-5",

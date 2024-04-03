@@ -15,7 +15,8 @@ const ContactPage = () => {
               </label>
               <input
                 type="text"
-                id="name"
+                id="user_name"
+                name="user_name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 "
                 placeholder="Enter Your Name"
                 required
@@ -28,6 +29,7 @@ const ContactPage = () => {
               <input
                 type="email"
                 id="email"
+                name="user_email"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 "
                 placeholder="Enter Your Email"
                 required
@@ -40,6 +42,7 @@ const ContactPage = () => {
               <input
                 type="text"
                 id="subject"
+                name="user_subject"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 "
                 placeholder="Write Your Subject"
               />
@@ -49,7 +52,7 @@ const ContactPage = () => {
                 Message
               </label>
               <textarea
-                name="message"
+                name="user_message"
                 id="message"
                 rows={3}
                 required

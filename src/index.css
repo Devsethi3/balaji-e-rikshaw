@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Lexend:100,200,300,regular,500,600,700,800,900);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Lexend", sans-serif;
+}
+
+.container {
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: 0.75rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-wrapper:hover .nav-link-wrapper {
+  min-height: 50px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-wrapper:hover .nav-link-wrapper.links {
+  opacity: 1;
+}
+
+.nav-link-wrapper {
+  z-index: 100;
+  min-height: 0;
+  opacity: 0;
+  transition: height 0.5s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+.links:not(:last-child) {
+  border-bottom: 1px solid #fff;
+}
+
+.home-subtitle::after {
+  content: "";
+  position: absolute;
+  background-color: crimson;
+  width: 50%;
+  height: 3px;
+  bottom: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-family: swiper-icons;
+  font-size: 1rem;
+  text-transform: none !important;
+  letter-spacing: 0;
+  color: #000;
+  font-weight: 800;
+  font-variant: initial;
+  line-height: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    gap: 0;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+  }
+  .show-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-list {
+    margin-top: 3rem;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+    gap: 2.5rem;
+  }
+  .nav-link {
+    padding-block: 1rem;
+  }
+  .nav-link-wrapper {
+    top: 1rem;
+    right: -50%;
+  }
+}

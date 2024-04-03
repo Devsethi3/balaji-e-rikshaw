@@ -10,7 +10,19 @@ export default function VehicleSlider() {
   return (
     <>
       <Swiper
-        slidesPerView={3}
+        breakpoints={{
+          // When window width is >= 768px
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // When window width is >= 1024px
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        }}
+        // slidesPerView={3}
         spaceBetween={20}
         centeredSlides={true}
         autoplay={{
@@ -65,5 +77,3 @@ export default function VehicleSlider() {
     </>
   );
 }
-
-Add breakpoints for responsiveness

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import HeroSlider from "../components/HeroSlider";
 import VehicleSlider from "../components/VehicleSlider";
@@ -6,6 +7,27 @@ const HomePage = () => {
   return (
     <>
       <main className="relative z-[10]">
+        <div className="bg-gradient-to-t from-rose-50 to-yellow-50">
+          <div className="min-h-[80vh] container flex text-center flex-col items-center justify-center gap-10">
+            <h1 className="text-3xl lg:text-5xl font-semibold ">
+              Welcome to Balaji E-Rickshaw - Your Trusted Companion for
+              Eco-Friendly Travel Solutions!
+            </h1>
+            <p className="text-lg max-w-[65rem]">
+              Our range of E-Rickshaws is designed to meet the diverse needs of
+              modern-day commuters, whether you're navigating through busy city
+              streets or exploring suburban landscapes. With cutting-edge
+              technology and superior craftsmanship, each of our vehicles
+              promises a smooth, comfortable, and emission-free ride.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link to="/" className="py-3 px-6 bg-rose-500 hover:bg-rose-700 transition rounded-md text-white">
+                Explore More
+              </Link>
+              <Link to="/company-profile/about-us" className="py-3 px-6 hover:bg-gray-200 transition rounded-md ">About Us</Link>
+            </div>
+          </div>
+        </div>
         <div className="h-[80vh]">
           <HeroSlider />
         </div>
@@ -15,7 +37,7 @@ const HomePage = () => {
               India's Leading E-Rickshaw Manufacturer.
             </h2>
             <p className="">
-              SAARTHI e-Rickshaws are India's leading brand for launching
+              BALAJI e-Rickshaws are India's leading brand for launching
               e-Rickshaw (Battery Driven Technology) in the Country. We believe
               in our ideas to change the world of our long decades man pulled
               rickshaws in our country.
@@ -28,7 +50,7 @@ const HomePage = () => {
             </p>
             <p className="text-start">
               And today we have wide variety of e-Rickshaws / Electric Vehicles
-              (Battery Driven) under the brand name "SAARTHI" e-Rickshaw.
+              (Battery Driven) under the brand name "BALAJI" e-Rickshaw.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
               <img
@@ -81,7 +103,7 @@ const HomePage = () => {
         </div>
         <div className="flex items-center justify-center bg-white min-h-[70vh] w-full relative">
           <div className="container flex items-center flex-col gap-10">
-            <h2 className="home-subtitle relative my-6 text-center max-w-xl text-3xl font-semibold">
+            <h2 className="home-subtitle relative my-6 text-center max-w-xl text-2xl lg:text-3xl font-semibold">
               Best In Class Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16">

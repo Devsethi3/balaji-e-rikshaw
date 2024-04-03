@@ -2,13 +2,40 @@ import { MdEmail } from "react-icons/md";
 import Footer from "../components/Footer";
 import { FaPhone } from "react-icons/fa6";
 import { BsWhatsapp } from "react-icons/bs";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const ContactPage = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm("service_b9d6ri8", "template_d7m2lpn", formRef.current, {
+        publicKey: "wjG0qEbYkoa3KZJSJ",
+      })
+      .then(
+        () => {
+          console.log("Email sent successfully!");
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+        }
+      );
+  };
+
   return (
     <>
       <div className="grid grid-cols-1 my-5 container lg:grid-cols-2 min-h-[82vh] gap-12 items-center">
         <div className="shadow-sm rounded-md border py-10">
-          <form className="max-w-lg mx-4 md:mx-auto">
+          <form
+            onSubmit={sendEmail}
+            ref={formRef}
+            className="max-w-lg mx-4 md:mx-auto"
+          >
             <div className="mb-5">
               <label htmlFor="name" className="block text-sm text-gray-600">
                 Your Name

@@ -2,8 +2,13 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import HeroSlider from "../components/HeroSlider";
 import VehicleSlider from "../components/VehicleSlider";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const HomePage = () => {
+  useGSAP(() => {
+    gsap.from('.',{})
+  },[])
   return (
     <>
       <main className="relative z-[10]">

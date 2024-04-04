@@ -38,7 +38,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-gray-700 transition transform hover:translate-x-2 duration-200 flex items-center gap-1 hover:text-rose-700/75"
-                      to="/saarthi-dlx"
+                      to="/vehicle/saarthi-dlx"
                     >
                       <IoIosArrowForward />
                       Saathi DLX
@@ -47,7 +47,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-gray-700 transition transform hover:translate-x-2 duration-200 flex items-center gap-1 hover:text-rose-700/75"
-                      to="/saarthi-e-auto"
+                      to="/vehicle/saarthi-e-auto"
                     >
                       <IoIosArrowForward />
                       Saarthi SHEVAK E-AUTO
@@ -56,7 +56,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-gray-700 transition transform hover:translate-x-2 duration-200 flex items-center gap-1 hover:text-rose-700/75"
-                      to="/saarthi-cargo-l5"
+                      to="/vehicle/saarthi-cargo-l5"
                     >
                       <IoIosArrowForward />
                       Saarthi SHEVAK CARGO L-5
@@ -65,7 +65,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-gray-700 transition transform hover:translate-x-2 duration-200 flex items-center gap-1 hover:text-rose-700/75"
-                      to="/saarthi-shaktiman"
+                      to="/vehicle/saarthi-shaktiman"
                     >
                       <IoIosArrowForward />
                       Saathi Shaktiman
@@ -74,7 +74,7 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-gray-700 transition transform hover:translate-x-2 duration-200 flex items-center gap-1 hover:text-rose-700/75"
-                      to="/saarthi-e-cab"
+                      to="/vehicle/saarthi-e-cab"
                     >
                       <IoIosArrowForward />
                       Saarthi Spark
